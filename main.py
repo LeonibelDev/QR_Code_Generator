@@ -19,15 +19,21 @@ customtkinter.set_default_color_theme('blue')
 
 root = customtkinter.CTk()
 root.geometry('350x400')
+root.maxsize(350, 400)
+root.minsize(350, 400)
+root.title('qr code convert')
 
-input_label = customtkinter.CTkTextbox(master=root, border_color='red', width=200, height=40, corner_radius=5, font=("Segoe UI", 20))
+input_label = customtkinter.CTkTextbox(master=root, border_color='white', border_width=1, width=200, height=40, corner_radius=5, font=("Segoe UI", 20))
 input_label.place(relx=0.2, rely=0.1) 
 
-button_label = customtkinter.CTkButton(master=root, text='Convert', command=lambda:generate(input_label.get('0.0', 'end')))
-button_label.place(relx=0.3, rely=0.2)
+button_label = customtkinter.CTkButton(master=root, text='Convert', width=200, command=lambda:generate(input_label.get('0.0', 'end')))
+button_label.grid(pady=90, padx=70)
 
 frame = customtkinter.CTkFrame(master=root, border_width=5)
-frame.place(relx=0.2, rely=0.3)
+frame.place(relx=0.2, rely=0.4)
+
+frame_text = customtkinter.CTkLabel(master=frame, text='QR CODE', font=("Segoe UI", 20))
+frame_text.place(relx=0.3, rely=0.4)
 
 if __name__ == '__main__':
     root.mainloop()
