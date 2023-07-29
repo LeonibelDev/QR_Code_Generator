@@ -14,4 +14,13 @@ Run the following command to install the dependencies:
 pip install -r requirements.txt
 ```
 
+# How to use
+
+```bash
+python3 main.py
+```
+
 ![QR UI](screenshot/qr_ui.png)
+
+Make with ❤️ by LeonibelDev
+
